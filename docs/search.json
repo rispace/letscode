@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Leetcode: Data Structure and Algorithms",
+    "section": "",
+    "text": "Problem 1: Leetcode 69: Sqrt(x)\n\n\n\n\n\nGiven a non-negative integer, \\(x\\), return the square root of \\(x\\) rounded down to the nearest integer. The returned integer should be non-negative as well.\nYou may not use any built-in exponent function. For example, x**0.5 in python.\nExample:\nInput: x=4\nOutput: 2  \n\nInput: x=8\nOutput: 2\nExplanation: Square root of 4 is 2 and square root of 8 is 2.8284. But we need to round down to any fraction. Therefore, the square root of 8 is also 2.\nSolution:\nThe square root of any number \\(x\\ge 0\\) is less than or equal to \\(x\\). The brute force solution to this would be \\(\\mathcal{O}(\\sqrt{n})\\). Because, say \\(x=8\\), then\nfor \\(i=1\\) to 8: \\[\\begin{align*}\n  1^2 & = 1 &lt;8 \\\\\n  2^2 & = 4 &lt;8\\\\\n  3^2 & = 9 &gt;8\n\\end{align*}\\]\n\nIn contrast, if we explore binary search then the time complexity reduces to \\(\\mathcal{O}(\\log{n})\\). Say the square root is \\(s\\) which is the middle value in the range of 1 to \\(x\\). Then if \\(s^2&gt;x\\), we search for the root in the left half. Otherwise, if \\(s^2&lt;x\\) then we search the right side. However, when \\(s^2&lt;x\\), then \\(s\\) is a possible candidate for the square root.\nAlgorithm:\n\nset left value \\(l= 0\\), right value \\(r= x\\)\n\nCompute the middle value \\(m=l+(r-l)/2\\)\n\nIf \\(m^2 &gt; x\\) then search the left side: set \\(r=m-1\\)\n\nIf \\(m^2 &lt; x\\) then search the right side: set \\(l=m+1\\)\n\n\ndef square_root(x):\n  l, r = 0, x \n  sq = 0\n  while l&lt;=r:\n    m = l + (r-l)//2 \n    if m**2 &gt; x:\n      r= m-1\n    elif m**2 &lt; x:\n      l = m+1 \n      sq = m\n    else:\n      return m  \n  return sq \n      \nprint(square_root(6))\n\n2"
+  },
+  {
+    "objectID": "index.html#binary-search",
+    "href": "index.html#binary-search",
+    "title": "Leetcode: Data Structure and Algorithms",
+    "section": "",
+    "text": "Problem 1: Leetcode 69: Sqrt(x)\n\n\n\n\n\nGiven a non-negative integer, \\(x\\), return the square root of \\(x\\) rounded down to the nearest integer. The returned integer should be non-negative as well.\nYou may not use any built-in exponent function. For example, x**0.5 in python.\nExample:\nInput: x=4\nOutput: 2  \n\nInput: x=8\nOutput: 2\nExplanation: Square root of 4 is 2 and square root of 8 is 2.8284. But we need to round down to any fraction. Therefore, the square root of 8 is also 2.\nSolution:\nThe square root of any number \\(x\\ge 0\\) is less than or equal to \\(x\\). The brute force solution to this would be \\(\\mathcal{O}(\\sqrt{n})\\). Because, say \\(x=8\\), then\nfor \\(i=1\\) to 8: \\[\\begin{align*}\n  1^2 & = 1 &lt;8 \\\\\n  2^2 & = 4 &lt;8\\\\\n  3^2 & = 9 &gt;8\n\\end{align*}\\]\n\nIn contrast, if we explore binary search then the time complexity reduces to \\(\\mathcal{O}(\\log{n})\\). Say the square root is \\(s\\) which is the middle value in the range of 1 to \\(x\\). Then if \\(s^2&gt;x\\), we search for the root in the left half. Otherwise, if \\(s^2&lt;x\\) then we search the right side. However, when \\(s^2&lt;x\\), then \\(s\\) is a possible candidate for the square root.\nAlgorithm:\n\nset left value \\(l= 0\\), right value \\(r= x\\)\n\nCompute the middle value \\(m=l+(r-l)/2\\)\n\nIf \\(m^2 &gt; x\\) then search the left side: set \\(r=m-1\\)\n\nIf \\(m^2 &lt; x\\) then search the right side: set \\(l=m+1\\)\n\n\ndef square_root(x):\n  l, r = 0, x \n  sq = 0\n  while l&lt;=r:\n    m = l + (r-l)//2 \n    if m**2 &gt; x:\n      r= m-1\n    elif m**2 &lt; x:\n      l = m+1 \n      sq = m\n    else:\n      return m  \n  return sq \n      \nprint(square_root(6))\n\n2"
+  },
+  {
+    "objectID": "index.html#array",
+    "href": "index.html#array",
+    "title": "Leetcode: Data Structure and Algorithms",
+    "section": "Array",
+    "text": "Array\n\n\n\n\n\n\nProblem 1: Intersection of two sets\n\n\n\n\n\nSay, we are given two sets \\(A=[2,3,5,6,8]\\) and \\(B=[4,6,8]\\). We want to find the intersection of the elements in these sets.\ndef intersection_of_two_sets(A,B):\n  set_a = set(A)\n  return [b for b in B if b in set_a]\n\nA = [2,3,5,6,8]\nB = [4,6,8]\nprint(intersection_of_two_sets(A,B))\n[6, 8]\n\n\n\n\n\n\n\n\n\nProblem 2: Histogram from a given array and bin number\n\n\n\n\n\nSay, we are given an array \\(A=[1,2,2,3,3,3,4,4,4,4,5,5,5,5,5]\\) and number of bins. We want to\ndef generate_histogram(A, num_bins):\n  min_value = min(A)\n  max_value = max(A)\n  bin_width = (max_value-min_value)/num_bins"
+  },
+  {
+    "objectID": "index.html#string",
+    "href": "index.html#string",
+    "title": "Leetcode: Data Structure and Algorithms",
+    "section": "String",
+    "text": "String\n\n\n\n\n\n\nProblem 1: Leetcode 242: Valid Anagram\n\n\n\n\n\nGiven two strings s and t, return true if t is an anagram of s, and false otherwise\nExample: Input: s=\"anagram\", t=\"nagaram\" Output: true\nSince the word anagram has 3 a’s, 1 n, 1 g, 1 r, and 1 m and nagaram has exactly the same number of the same alphabets, therefore they are anagram of each other.\nExample: Input: s=\"rat\", t=\"cat\" Output: false\nSince the word rat has 1 r, 1 a, and 1 t but cat has 2 elements same as rat but one element different. Therefore the answer is false.\nNote that, they both have the same length.\nConstraints:\n\n\\(1\\le s\\).length, \\(t\\).length \\(\\le 5\\times 10^4\\)\n\ns and t consists of lowercase English letters\n\nSolution:\nWe can use hasmap to solve this problem. Basically, we will create two hasmaps for two words and match the keys and values of the hasmaps. If they are equal then it’s an anagram, otherwise not.\n\ndef isAnagram(s,t):\n  if len(s) != len(t):\n    return False \n  \n  hash_s, hash_t = {}, {}\n  for i in range(len(s)):\n    hash_s[s[i]] = 1 + hash_s.get(s[i],0)  # get function collects the key and values.\n    hash_t[t[i]] = 1 + hash_t.get(t[i],0)  # if there's no key, 0 is the default value\n  \n  for c in hash_s:\n    if hash_s[c] != hash_t.get(c,0):       # Here, get function ensures there is no \n      return False                         # key error\n  return True\n\ns = \"anagram\"\nt = \"nagaram\"\n\nprint(isAnagram(s,t))\n\nu = \"rat\"\n\nprint(isAnagram(s,u))\n\nTrue\nFalse\n\n\nTime and Space Complexity:\nTime complexity \\(\\mathcal{O}(m+n)\\) where \\(m\\) and \\(n\\) are the length of s and t and memory complexity is the same \\(\\mathcal{O}(m+n)\\)\nOptimization: Can we solve the problem in \\(\\mathcal{O}(1)\\)? If we assume sort doesn’t require extra space, then\n\ndef isAnagram(s,t):\n  return sorted(s)== sorted(t)\n\ns= \"anagram\"\nt= \"nagaram\"\n\nprint(isAnagram(s,t))\n\nTrue"
+  },
+  {
+    "objectID": "index.html#reference",
+    "href": "index.html#reference",
+    "title": "Leetcode: Data Structure and Algorithms",
+    "section": "Reference",
+    "text": "Reference\nAll my solutions here are based on the solutions found from NeetCode."
+  }
+]
