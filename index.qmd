@@ -223,7 +223,27 @@ print(isAnagram(s,t))
 u = "rat"
 
 print(isAnagram(s,u))
+```    
+
+In the above code:  
+```python
+hash_s, hash_t = {}, {}
+  for i in range(len(s)):
+    hash_s[s[i]] = 1 + hash_s.get(s[i],0)  
+    hash_t[t[i]] = 1 + hash_t.get(t[i],0)  
 ```  
+
+It makes the following hasmaps:  
+
+|     | s     |     | t     |
+|:---:|:-----:|:---:|:-----:|
+| Key | Value | Key | Value |
+| a   | 3     | a   | 3     |
+| n   | 1     | n   | 1     |
+| g   | 1     | g   | 1     |
+| r   | 1     | r   | 1     |
+| m   | 1     | m   | 1     |
+
 
 **Time and Space Complexity:**  
 Time complexity $\mathcal{O}(m+n)$ where $m$ and $n$ are the length of `s` and `t` and memory complexity is the same $\mathcal{O}(m+n)$  
