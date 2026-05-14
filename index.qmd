@@ -137,7 +137,33 @@ def generate_histogram(A, num_bins):
   min_value = min(A)
   max_value = max(A)
   bin_width = (max_value-min_value)/num_bins
-```  
+```
+
+:::  
+
+::: {.callout-note collapse="true" appearance="simple" icon="false"}  
+## Problem 3: LeetCode 1: Two Sum
+
+Say we have an array of integers $A=[2,1,5,3]$ and a target `target=4`. We want to find the sum of two elements in the array that equals the target. We want to return the indices of the two elements. The best possible way to solve this problem is to use a hashmap. We can store the elements of the array in a hashmap and check if the complement of the current element exists in the hashmap. If it does, we return the indices of the two elements.  
+
+**Time Complexity:** $\mathcal{O}(n)$ where $n$ is the length of the array.  
+**Space Complexity:** $\mathcal{O}(n)$ where $n$ is the length of the array.
+
+```{python}
+#| output: asis
+def two_sum(nums, target):
+  prevMap = {} # Value : Index
+  for i, n in enumerate(nums):
+    diff = target - n
+    if diff in prevMap:
+      return [prevMap[diff], i]
+    prevMap[n] = i
+  return []
+
+nums = [2,1,5,3]
+target = 4
+print(two_sum(nums, target))
+```
 
 :::
 
