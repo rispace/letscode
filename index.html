@@ -507,7 +507,7 @@ window.Quarto = {
 </li>
 <li>If <span class="math inline">\(m^2 &lt; x\)</span> then search the right side: set <span class="math inline">\(l=m+1\)</span></li>
 </ol>
-<div id="50d85496" class="cell" data-execution_count="2">
+<div id="d0254173" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square_root(x):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  l, r <span class="op">=</span> <span class="dv">0</span>, x </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  sq <span class="op">=</span> <span class="dv">0</span></span>
@@ -637,7 +637,7 @@ window.Quarto = {
 </ul>
 <p><strong>Solution:</strong><br>
 We can use <code>hasmap</code> to solve this problem. Basically, we will create two hasmaps for two words and match the keys and values of the hasmaps. If they are equal then it’s an anagram, otherwise not.</p>
-<div id="9c07bc7b" class="cell" data-execution_count="6">
+<div id="7acfc8ac" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isAnagram(s,t):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="bu">len</span>(s) <span class="op">!=</span> <span class="bu">len</span>(t):</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">False</span> </span>
@@ -722,7 +722,7 @@ False</code></pre>
 <p><strong>Time and Space Complexity:</strong><br>
 Time complexity <span class="math inline">\(\mathcal{O}(m+n)\)</span> where <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> are the length of <code>s</code> and <code>t</code> and memory complexity is the same <span class="math inline">\(\mathcal{O}(m+n)\)</span></p>
 <p>Optimization: Can we solve the problem in <span class="math inline">\(\mathcal{O}(1)\)</span>? If we assume sort doesn’t require extra space, then</p>
-<div id="b6ba4139" class="cell" data-execution_count="7">
+<div id="6d552b63" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isAnagram(s,t):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">sorted</span>(s)<span class="op">==</span> <span class="bu">sorted</span>(t)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
