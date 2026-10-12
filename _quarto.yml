@@ -105,5 +105,20 @@ format:
     smooth-scroll: true
     link-external-icon: false
     link-external-newwindow: true
-    include-after-body: link-behavior.html
+    include-after-body: [link-behavior.html, share.html]
 
+
+comments:
+  giscus:
+    repo: rispace/rispace.github.io
+    repo-id: R_kgDOMV8crA
+    category: Announcements
+    category-id: DIC_kwDOMV8crM4CjbQW
+    mapping: pathname
+    reactions-enabled: true
+    input-position: top
+    loading: lazy
+    language: en
+    theme:
+      light: noborder_light
+      dark: noborder_dark
